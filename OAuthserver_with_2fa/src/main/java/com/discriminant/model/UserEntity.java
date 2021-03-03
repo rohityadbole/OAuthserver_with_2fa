@@ -1,7 +1,9 @@
-package com.oauthserver2fa.model;
+package com.discriminant.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
+import javax.persistence.Column;
 
 import org.springframework.security.core.GrantedAuthority;
 
@@ -19,7 +21,37 @@ public class UserEntity {
 	private String user_type;
 	private String is_tfa_enabled;
 	private String tfa_default_type;
+    private boolean enabled;
+    private boolean accountNonExpired;
+    private boolean credentialsNonExpired;
+    private boolean accountNonLocked;
+    
+    public UserEntity() {
+		// TODO Auto-generated constructor stub
+	}
 	
+	public UserEntity(String id, String name, String emailId, String password,
+			Collection<GrantedAuthority> grantedAuthoritiesList, String first_name, String last_name, String mobile,
+			String country, String user_type, String is_tfa_enabled, String tfa_default_type, boolean enabled,
+			boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.emailId = emailId;
+		this.password = password;
+		this.grantedAuthoritiesList = grantedAuthoritiesList;
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.mobile = mobile;
+		this.country = country;
+		this.user_type = user_type;
+		this.is_tfa_enabled = is_tfa_enabled;
+		this.tfa_default_type = tfa_default_type;
+		this.enabled = enabled;
+		this.accountNonExpired = accountNonExpired;
+		this.credentialsNonExpired = credentialsNonExpired;
+		this.accountNonLocked = accountNonLocked;
+	}
 	public String getIs_tfa_enabled() {
 		return is_tfa_enabled;
 	}
@@ -92,4 +124,29 @@ public class UserEntity {
 	public void setGrantedAuthoritiesList(Collection<GrantedAuthority> grantedAuthoritiesList) {
 		this.grantedAuthoritiesList = grantedAuthoritiesList;
 	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	public boolean isAccountNonExpired() {
+		return accountNonExpired;
+	}
+	public void setAccountNonExpired(boolean accountNonExpired) {
+		this.accountNonExpired = accountNonExpired;
+	}
+	public boolean isCredentialsNonExpired() {
+		return credentialsNonExpired;
+	}
+	public void setCredentialsNonExpired(boolean credentialsNonExpired) {
+		this.credentialsNonExpired = credentialsNonExpired;
+	}
+	public boolean isAccountNonLocked() {
+		return accountNonLocked;
+	}
+	public void setAccountNonLocked(boolean accountNonLocked) {
+		this.accountNonLocked = accountNonLocked;
+	}
+	
 }

@@ -4,11 +4,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.oauthserver2fa</groupId>
-	<artifactId>OAuthserver_with_2fa</artifactId>
+	<groupId>com.discriminant</groupId>
+	<artifactId>OAuthserver2fa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>OAuthserver_with_2fa</name>
-	<description>Project for Spring Boot</description>
+	<packaging>jar</packaging>
+	<name>OAuthserver2fa</name>
+	<description>OAuth server with two factor authentication</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

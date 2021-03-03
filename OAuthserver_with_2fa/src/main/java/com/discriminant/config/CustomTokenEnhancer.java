@@ -1,4 +1,4 @@
-package com.oauthserver2fa.config;
+package com.discriminant.config;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -8,7 +8,7 @@ import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
-import com.oauthserver2fa.model.CustomUser;
+import com.discriminant.model.CustomUser;
 
 
 public class CustomTokenEnhancer extends JwtAccessTokenConverter {

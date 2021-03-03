@@ -1,4 +1,4 @@
-package com.oauthserver2fa.dao;
+package com.discriminant.dao;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,7 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Repository;
 
-import com.oauthserver2fa.model.UserEntity;
+import com.discriminant.model.UserEntity;
 
 
 @Repository
@@ -38,6 +38,10 @@ public class OAuthDAOServiceImpl implements OAuthDAOService {
 					user.setUser_type(rs.getString("USER_TYPE"));
 					user.setIs_tfa_enabled(rs.getString("IS_TFA_ENABLED"));
 					user.setTfa_default_type(rs.getString("TFA_DEFAULT_TYPE"));
+					user.setEnabled(rs.getBoolean("ENABLED"));
+					user.setAccountNonExpired(rs.getBoolean("ACCOUNTNONEXPIRED"));
+					user.setCredentialsNonExpired(rs.getBoolean("CREDENTIALSNONEXPIRED"));
+					user.setAccountNonLocked(rs.getBoolean("ACCOUNTNONLOCKED"));
 					return user;
 				});
 

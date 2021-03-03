@@ -1,4 +1,4 @@
-package com.oauthserver2fa.config;
+package com.discriminant.config;
 
 import java.io.IOException;
 

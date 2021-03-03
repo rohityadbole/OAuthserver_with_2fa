@@ -1,4 +1,4 @@
-package com.oauthserver2fa.model;
+package com.discriminant.model;
 
 import org.springframework.security.core.userdetails.User;
 
@@ -13,6 +13,10 @@ public class CustomUser extends User {
 	private String user_type;
 	private String is_tfa_enabled;
 	private String tfa_default_type;
+	private boolean enabled;//true if the user is enabled, false otherwise
+    private boolean accountNonExpired;//true if the user's account is valid (ie non-expired), false if no longer valid (ie expired)
+    private boolean credentialsNonExpired;//true if the user's credentials are valid (ie non-expired), false if no longer valid (ie expired)
+    private boolean accountNonLocked;//table, if “accountNonLocked” = 0 or false, means this user is in locked status.true if the user is not locked, false otherwise
 	
 
 	public CustomUser(UserEntity user) {
@@ -25,6 +29,10 @@ public class CustomUser extends User {
 		this.user_type = user.getUser_type();
 		this.is_tfa_enabled = user.getIs_tfa_enabled();
 		this.tfa_default_type = user.getTfa_default_type();
+		this.enabled = user.isEnabled();
+		this.accountNonExpired = user.isAccountNonExpired();
+		this.credentialsNonExpired = user.isCredentialsNonExpired();
+		this.accountNonLocked = user.isAccountNonExpired();
 	}
 
 	public String getId() {
@@ -96,6 +104,38 @@ public class CustomUser extends User {
 
 	public void setTfa_default_type(String tfa_default_type) {
 		this.tfa_default_type = tfa_default_type;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public boolean isAccountNonExpired() {
+		return accountNonExpired;
+	}
+
+	public void setAccountNonExpired(boolean accountNonExpired) {
+		this.accountNonExpired = accountNonExpired;
+	}
+
+	public boolean isCredentialsNonExpired() {
+		return credentialsNonExpired;
+	}
+
+	public void setCredentialsNonExpired(boolean credentialsNonExpired) {
+		this.credentialsNonExpired = credentialsNonExpired;
+	}
+
+	public boolean isAccountNonLocked() {
+		return accountNonLocked;
+	}
+
+	public void setAccountNonLocked(boolean accountNonLocked) {
+		this.accountNonLocked = accountNonLocked;
 	}
 
 	

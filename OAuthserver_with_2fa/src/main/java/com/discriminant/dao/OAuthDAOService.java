@@ -1,5 +1,5 @@
-package com.oauthserver2fa.dao;
-import com.oauthserver2fa.model.UserEntity;
+package com.discriminant.dao;
+import com.discriminant.model.UserEntity;
 
 public interface OAuthDAOService {
 	

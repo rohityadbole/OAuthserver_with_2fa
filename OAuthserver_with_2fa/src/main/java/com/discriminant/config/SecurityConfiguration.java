@@ -1,4 +1,4 @@
-package com.oauthserver2fa.config;
+package com.discriminant.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import com.oauthserver2fa.service.CustomUserDetailsService;
+
+import com.discriminant.service.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
